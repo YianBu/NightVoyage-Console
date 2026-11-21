@@ -1,0 +1,38 @@
+name: bootstrap-0.0.1
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create tag 0.0.1
+        run: |
+          if git ls-remote --tags origin refs/tags/0.0.1 | grep -q .; then
+            echo "tag already exists"
+          else
+            git tag 0.0.1 156f80d6891b8a988df6ae340db49903882f0b89
+            git push origin 0.0.1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: 156f80d6891b8a988df6ae340db49903882f0b89
+          path: release
+      - name: Package
+        working-directory: release
+        run: |
+          rm -rf .git .github logs screenshots profile.json dist
+          zip -r ../NightVoyage-Console-0.0.1.zip .
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: 0.0.1
+          name: NightVoyage Console 0.0.1
+          body: |
+            Initial release.
+          files: NightVoyage-Console-0.0.1.zip
