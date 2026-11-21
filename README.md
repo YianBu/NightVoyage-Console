@@ -95,4 +95,3 @@ python -m pip install -r requirements.txt
 ## English
 
 **NightVoyage Console** ([YianBu/NightVoyage-Console](https://github.com/YianBu/NightVoyage-Console)) is a semi-auto control deck for Duet Night Abyss. It currently includes a calamity action-dialog helper, a main-character rotation runner, and global game key bindings. Character rotations are data-driven; the Mijin-specific rotations are kept out of the general main-character list.
-

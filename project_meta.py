@@ -1,0 +1,6 @@
+NAME_ZH = "夜航操作台"
+NAME_EN = "NightVoyage Console"
+SLUG = "NightVoyage-Console"
+REPO_URL = "https://github.com/YianBu/NightVoyage-Console"
+VERSION = "0.0.1"
+DESCRIPTION_EN = "A semi-auto control deck for Duet Night Abyss."

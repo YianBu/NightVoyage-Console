@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nightvoyage-console"
+version = "0.0.1"
+description = "A semi-auto control deck for Duet Night Abyss."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "Pillow>=10.0",
+    "numpy>=1.26",
+    "opencv-python>=4.10",
+    "psutil>=5.9",
+    "pywin32>=306; sys_platform == 'win32'",
+    "rapidocr>=3.4",
+]
+
+[project.urls]
+Repository = "https://github.com/YianBu/NightVoyage-Console"
+
+[tool.setuptools]
+py-modules = [
+    "main",
+    "ui",
+    "engine",
+    "vision",
+    "windowing",
+    "settings_store",
+    "character_rotation",
+    "character_mixin",
+    "character_runner",
+    "input_keys",
+    "project_meta",
+]
